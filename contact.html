@@ -61,6 +61,46 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
 
+  <script>
+    function sendEmail(){
+      const recipientEmail = 'akashchtry@gmail.com';
+const senderEmail = 'akashchtry@gmail.com';
+const subject = 'Example Subject';
+const body = 'This is an example email body';
+
+// Make API request to SendGrid
+fetch('https://api.sendgrid.com/v3/mail/send', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer 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', // Replace API_KEY with your SendGrid API key
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    personalizations: [{
+      to: [{ email: recipientEmail }],
+      subject: subject
+    }],
+    from: { email: senderEmail },
+    content: [{
+      type: 'text/plain',
+      value: body
+    }]
+  })
+})
+.then(response => {
+  if (response.ok) {
+    console.log('Email sent successfully');
+  } else {
+    console.error('Failed to send email:', response.statusText);
+  }
+})
+.catch(error => {
+  console.error('Failed to send email:', error);
+});
+
+    }
+  </script>
+
   <body>
     <!-- Spinner Start -->
     <div
@@ -197,7 +237,7 @@
             <p class="mb-4">
               Get in Touch with Alpha Fincare - Your Trusted Financial Partner.
             </p>
-            <form>
+            <form onsubmit="sendEmail();return false">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-floating">
@@ -206,6 +246,7 @@
                       class="form-control"
                       id="name"
                       placeholder="Your Name"
+                      required
                     />
                     <label for="name">Your Name</label>
                   </div>
@@ -228,6 +269,7 @@
                       class="form-control"
                       id="subject"
                       placeholder="Subject"
+                      required
                     />
                     <label for="subject">Subject</label>
                   </div>
@@ -239,6 +281,7 @@
                       placeholder="Leave a message here"
                       id="message"
                       style="height: 100px"
+                      required
                     ></textarea>
                     <label for="message">Message</label>
                   </div>
