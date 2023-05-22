@@ -529,3 +529,41 @@ h6,
 .copyright a:hover {
   color: var(--primary);
 }
+.flex-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+.width-25{
+  
+}
+.width-75{
+  width: 100%;
+}
+.flex-box-start {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+}
+.image{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .flex-box {
+      flex-direction: row;
+  }
+  .width-25{
+    width: 330px;
+  height: 330px;
+  }
+  .width-75{
+    width: 75%;
+  }
+}
