@@ -576,5 +576,6 @@ width: 100%;
 @media (min-width: 610px) {
  .about-cont{
   width: 35rem !important;
+  height: 387px !important;
  }
 }
