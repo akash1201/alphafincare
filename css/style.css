@@ -14,6 +14,11 @@
   bottom: 30px;
   z-index: 99;
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 h1,
 .h1,
@@ -528,4 +533,49 @@ h6,
 
 .copyright a:hover {
   color: var(--primary);
+}
+.flex-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+.flex{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-box-start {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.header-text{
+  font-size: 2.8rem;
+  text-align: center;
+}
+.icon-i{
+  font-size: 2rem;
+}
+
+.rohit-image{
+width: 100%;
+
+}
+.flex-col{
+  flex-direction: column;
+}
+@media (min-width: 610px) {
+ .about-cont{
+  width: 35rem !important;
+  height: 387px !important;
+ }
 }
